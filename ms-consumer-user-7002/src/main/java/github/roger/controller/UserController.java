@@ -1,6 +1,7 @@
 package github.roger.controller;
 
 import github.roger.entity.User;
+import github.roger.exception.CommonException;
 import github.roger.service.UserService;
 import github.roger.vo.OrderVo;
 import github.roger.vo.UserInfoVo;
@@ -33,12 +34,15 @@ public class UserController {
 
     @RequestMapping("/queryUserInfoById/{id}")
     public UserInfoVo queryUserInfoById(@PathVariable("id") Integer id){
-        User user = userService.findById(id);
+        try {
+            User user = userService.findById(id);
+            ResponseEntity<List> responseEntity = restTemplate.getForEntity("http://MS-PROVIDER-ORDER/order/queryOrderListByUserId/" + id, List.class);
+            List<OrderVo> orderVoList = responseEntity.getBody();
 
-        ResponseEntity<List> responseEntity = restTemplate.getForEntity("http://MS-PROVIDER-ORDER/order/queryOrderListByUserId/" + id, List.class);
-        List<OrderVo> orderVoList = responseEntity.getBody();
-
-        return new UserInfoVo(user.getUserName(),orderVoList);
+            return new UserInfoVo(user.getUserName(), orderVoList);
+        }catch (Exception exc){
+            throw new CommonException(0,exc.getMessage());
+        }
     }
 
     @GetMapping("/getIpAndPort")

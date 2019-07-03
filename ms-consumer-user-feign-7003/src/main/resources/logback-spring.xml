@@ -14,7 +14,7 @@
     <property name="FILE_LOG_PATTERN" value="%d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${PID:- } --- [%t] %-40.40logger{39} : %m%n%wex"/>
 
     <!-- 日志文件的前缀 -->
-    <property name="LOG_FILE_PREFIX" value="ms-consumer-user-7003" />
+    <property name="LOG_FILE_PREFIX" value="ms-consumer-user-feign-7003" />
 
     <!--多环境的日志输出-->
     <!--根据不同环境（prd:生产环境，test:测试环境，dev:开发环境）来定义不同的日志输出，-->

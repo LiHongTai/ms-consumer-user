@@ -1,19 +1,16 @@
-package github.roger.vo;
+package github.roger.exception;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
-import java.util.List;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class UserInfoVo {
+public class CommonException extends RuntimeException {
 
-    private String userName;
-    private List<OrderVo> orderVoList;
-
+    private Integer code;
+    private String messeage;
 }

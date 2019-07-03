@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>ms-consumer-user-7002</artifactId>
+    <artifactId>ms-consumer-user-feign-7003</artifactId>
 
     <properties>
         <druid.version>1.1.10</druid.version>
@@ -78,6 +78,12 @@
         <dependency>
             <groupId>github.roger</groupId>
             <artifactId>ms-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- 引入API接口项目 -->
+        <dependency>
+            <groupId>github.roger</groupId>
+            <artifactId>ms-feign-api</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
 

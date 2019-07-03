@@ -6,6 +6,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>ms-consumer-user-7002</module>
+        <module>ms-consumer-user-feign-7003</module>
     </modules>
 
     <groupId>github.roger</groupId>
@@ -79,6 +80,9 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <classifier>exec</classifier>
+                </configuration>
             </plugin>
         </plugins>
     </build>

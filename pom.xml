@@ -7,6 +7,7 @@
     <modules>
         <module>ms-consumer-user-7002</module>
         <module>ms-consumer-user-feign-7003</module>
+        <module>ms-consumer-user-ribbon-7004</module>
     </modules>
 
     <groupId>github.roger</groupId>
